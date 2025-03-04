@@ -1,6 +1,9 @@
+import Footer from '../../components/Footer/Footer';
 import './Home.css';
 
 const Home = () => {
-    return  <h1>Home Page</h1>;
+    return  (
+        <Footer/>
+    )
 };
 export default Home;

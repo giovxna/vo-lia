@@ -21,6 +21,12 @@
     margin-right: var(--mb-2);
 }
 
+.footer-social i:hover {
+    color: var(--first-color);
+    transition: .5s;
+}
+
+
 .footer-title {
     font-size: var(--h3-font-size);
     color: var(--title-color);

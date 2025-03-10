@@ -8,8 +8,8 @@ const Footer = () => {
                     <a href="#" class="footer-logo">Vó Lia</a>
                     <span class="footer-description">Comida artesanal com tempero de vó!</span>
                     <div>
-                        <a href="https://api.whatsapp.com/send/?phone=5511930491258&text&type=phone_number&app_absent=0" class="footer-social"><i class='bx bxl-whatsapp'></i></a>
-                        <a href="https://www.instagram.com/marmitariavolia/" class="footer-social"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=5511930491258&text&type=phone_number&app_absent=0" class="footer-social" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                        <a href="https://www.instagram.com/marmitariavolia/" class="footer-social"><i class='bx bxl-instagram' target="_blank"></i></a>
                     </div>
                 </div>
 
@@ -26,7 +26,7 @@ const Footer = () => {
                 <div class="footer-content">
                     <h3 class="footer-title">Contato</h3>
                     <ul>
-                        <li><a href="https://api.whatsapp.com/send/?phone=5511930491258&text&type=phone_number&app_absent=0" class="footer-link">Fale conosco</a></li>
+                        <li><a href="https://api.whatsapp.com/send/?phone=5511930491258&text&type=phone_number&app_absent=0" class="footer-link" target="_blank">Fale conosco</a></li>
                         <li><a href="#" class="footer-link">Política de Privacidade</a></li>
                         <li><a href="#" class="footer-link">Termos de Serviço</a></li>
                     </ul>
@@ -37,7 +37,7 @@ const Footer = () => {
                     <ul>
                         <li>Av. Sapopemba, São Paulo</li>
                         <li>+ (55) 11 93049-1258</li>
-                        <li><a href="https://www.ifood.com.br/delivery/sao-paulo-sp/marmitaria-vo-lia-chacara-belenzinho/8830de62-8c30-4953-ae04-871e43403f11">IFood Marmitaria Vó Lia</a></li>
+                        <li><a href="https://www.ifood.com.br/delivery/sao-paulo-sp/marmitaria-vo-lia-chacara-belenzinho/8830de62-8c30-4953-ae04-871e43403f11" target="_blank"wwwwwwwwwwwwwds>IFood Marmitaria Vó Lia</a></li>
                     </ul>
                 </div>
             </div>

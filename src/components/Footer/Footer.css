@@ -4,8 +4,9 @@
 }
 
 .footer-logo {
+    font-family: var(--subtitle);
     font-size: var(--h3-font-size);
-    color: var(--first-color);
+    color: var(--second-color);
     font-weight: var(--font-semi-bold);
 }
 

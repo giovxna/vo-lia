@@ -20,10 +20,8 @@ const Footer = () => {
                 <div className="footer-content">
                     <h3 className="footer-title">O que oferecemos</h3>
                     <ul>
-                        <li><a href="#" className="footer-link">Entrega rápida</a></li>
                         <li><a href="#" className="footer-link">Pratos executivos</a></li>
                         <li><a href="#" className="footer-link">Marmitas individuais</a></li>
-                        <li><a href="#" className="footer-link">Refeições para eventos</a></li>
                     </ul>
                 </div>
 

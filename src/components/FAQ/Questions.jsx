@@ -32,18 +32,17 @@ const Questions = () => {
             });
         });
 
-        // Cleanup ao desmontar
         return () => {
             accordionItems.forEach((item) => {
                 const accordionHeader = item.querySelector('.question-accordion-header');
-                accordionHeader.replaceWith(accordionHeader.cloneNode(true)); // remove o listener
+                accordionHeader.replaceWith(accordionHeader.cloneNode(true));
             });
         };
     }, []);
 
     return (
-        <section className="question section" id="question">
-            <div className="question-container container grid bd-container bd-grid">
+        <section className="question section bd-container" id="question">
+            <div className="question-container bd-grid">
                 <div className="question-images">
                     <div className="question-orbe"></div>
                     <div className="question-img">
@@ -61,7 +60,6 @@ const Questions = () => {
                     </div>
 
                     <div className="question-accordion">
-                        {/** Repetição das perguntas */}
                         {[
                             {
                                 icon: 'bx bx-basket',

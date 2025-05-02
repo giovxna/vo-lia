@@ -42,8 +42,9 @@
     font-weight: var(--font-medium);
 }
 
-.nav-logo:hover {
-    color: var(--first-color);
+.nav-logo {
+    font-family: var(--subtitle);
+    color: var(--second-color);
 }
 
 .nav-link {

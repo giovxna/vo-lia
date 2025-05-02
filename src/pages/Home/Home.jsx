@@ -14,7 +14,7 @@ const Home = () => {
                 <div className="home-container bd-container bd-grid">
                     <div className="home-data">
                         <h1 className="home-title">Marmitaria Vó Lia</h1>
-                        <h2 className="home-subtitle">Comida de verdade, feita com amor e aquele temperinho de vó que acolhe o coração.</h2>
+                        <h4 className="home-subtitle">Comida de verdade, feita com amor e aquele temperinho de vó que acolhe o coração.</h4>
                         <a href="https://api.whatsapp.com/send/?phone=5511930491258&text&type=phone_number&app_absent=0"
                             className="button">Fazer meu pedido</a>
                     </div>
@@ -30,7 +30,8 @@ const Home = () => {
                         <span class="section-subtitle about-initial">Sobre nós</span>
                         <h2 class="section-title about-initial">O verdadeiro sabor da comida feita com amor</h2>
                         <p class="about-description">Na Marmitaria Vó Lia, cada prato é preparado como se fosse para a nossa própria família. Com ingredientes frescos, tempero na medida e um carinho que você sente no primeiro garfo. Sabor de casa, conforto de colo de vó.</p>
-                        <a href="#" class="button">Conheça nossa história</a>
+                        <a href="https://www.instagram.com/p/DHdtzz4MkB4/"
+                            className="button" target="_blank">Conheça nossa história</a>
                     </div>
 
                     <img src={Image} className="about-img" />

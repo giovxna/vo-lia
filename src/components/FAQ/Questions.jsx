@@ -1,14 +1,53 @@
-import './Questions.css'
-import Image from '../../assets/images/mg2.png'
+import { useEffect } from 'react';
+import './Questions.css';
+import Image from '../../assets/images/mg2.png';
 
 const Questions = () => {
+    useEffect(() => {
+        const accordionItems = document.querySelectorAll('.question-accordion-item');
+
+        const toggleItem = (item) => {
+            const accordionContent = item.querySelector('.question-accordion-content');
+
+            if (item.classList.contains('accordion-open')) {
+                accordionContent.removeAttribute('style');
+                item.classList.remove('accordion-open');
+            } else {
+                accordionContent.style.height = accordionContent.scrollHeight + 'px';
+                item.classList.add('accordion-open');
+            }
+        };
+
+        accordionItems.forEach((item) => {
+            const accordionHeader = item.querySelector('.question-accordion-header');
+
+            accordionHeader.addEventListener('click', () => {
+                const openItem = document.querySelector('.accordion-open');
+
+                toggleItem(item);
+
+                if (openItem && openItem !== item) {
+                    toggleItem(openItem);
+                }
+            });
+        });
+
+        // Cleanup ao desmontar
+        return () => {
+            accordionItems.forEach((item) => {
+                const accordionHeader = item.querySelector('.question-accordion-header');
+                accordionHeader.replaceWith(accordionHeader.cloneNode(true)); // remove o listener
+            });
+        };
+    }, []);
+
     return (
         <section className="question section" id="question">
             <div className="question-container container grid bd-container bd-grid">
                 <div className="question-images">
                     <div className="question-orbe"></div>
                     <div className="question-img">
-                        <img src={Image} className="about-img" />
+                        <img src={Image} className="about-img" alt="Perguntas frequentes" />
                     </div>
                 </div>
 
@@ -22,80 +61,47 @@ const Questions = () => {
                     </div>
 
                     <div className="question-accordion">
-
-                        <div className="question-accordion-item">
-                            <header className="question-accordion-header">
-                                <i className='bx bx-basket question-accordion-icon'></i>
-                                <h3 className="question-accordion-title">
-                                    Como faço meu pedido?
-                                </h3>
-                                <div className="question-accordion-arrow">
-                                    <i className='bx bxs-down-arrow'></i>
+                        {/** Repetição das perguntas */}
+                        {[
+                            {
+                                icon: 'bx bx-basket',
+                                title: 'Como faço meu pedido?',
+                                description: 'Você pode pedir pelo WhatsApp clicando no botão "Fazer meu pedido"/"Chamar no WhatsApp", ou diretamente pelo nosso perfil no iFood.'
+                            },
+                            {
+                                icon: 'bx bx-time-five',
+                                title: 'Qual o horário de funcionamento?',
+                                description: 'Atendemos de segunda a sábado, das 10h às 15h. Aos domingos, somente por encomenda antecipada.'
+                            },
+                            {
+                                icon: 'bx bx-money',
+                                title: 'Quais formas de pagamento vocês aceitam?',
+                                description: 'Aceitamos Pix, dinheiro, cartão de débito e crédito. No iFood, siga as opções da plataforma.'
+                            },
+                            {
+                                icon: 'bx bx-package',
+                                title: 'Vocês fazem entrega?',
+                                description: 'Sim! Entregamos em diversos bairros da Zona Leste de São Paulo. Consulte a taxa via WhatsApp.'
+                            }
+                        ].map((item, index) => (
+                            <div className="question-accordion-item" key={index}>
+                                <header className="question-accordion-header">
+                                    <i className={`${item.icon} question-accordion-icon`}></i>
+                                    <h3 className="question-accordion-title">{item.title}</h3>
+                                    <div className="question-accordion-arrow">
+                                        <i className='bx bxs-down-arrow'></i>
+                                    </div>
+                                </header>
+                                <div className="question-accordion-content">
+                                    <p className="question-accordion-description">{item.description}</p>
                                 </div>
-                            </header>
-                            <div className="question-accordion-content">
-                                <p className="question-accordion-description">
-                                    Você pode pedir pelo WhatsApp clicando no botão "Chamar no WhatsApp", ou diretamente pelo nosso perfil no iFood.
-                                </p>
                             </div>
-                        </div>
-
-                        <div className="question-accordion-item">
-                            <header className="question-accordion-header">
-                                <i className='bx bx-time-five question-accordion-icon'></i>
-                                <h3 className="question-accordion-title">
-                                    Qual o horário de funcionamento?
-                                </h3>
-                                <div className="question-accordion-arrow">
-                                    <i className='bx bxs-down-arrow'></i>
-                                </div>
-                            </header>
-                            <div className="question-accordion-content">
-                                <p className="question-accordion-description">
-                                    Atendemos de segunda a sábado, das 10h às 15h. Aos domingos, somente por encomenda antecipada.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="question-accordion-item">
-                            <header className="question-accordion-header">
-                                <i className='bx bx-money question-accordion-icon'></i>
-                                <h3 className="question-accordion-title">
-                                    Quais formas de pagamento vocês aceitam?
-                                </h3>
-                                <div className="question-accordion-arrow">
-                                    <i className='bx bxs-down-arrow'></i>
-                                </div>
-                            </header>
-                            <div className="question-accordion-content">
-                                <p className="question-accordion-description">
-                                    Aceitamos Pix, dinheiro, cartão de débito e crédito. No iFood, siga as opções da plataforma.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="question-accordion-item">
-                            <header className="question-accordion-header">
-                                <i className='bx bx-package question-accordion-icon'></i>
-                                <h3 className="question-accordion-title">
-                                    Vocês fazem entrega?
-                                </h3>
-                                <div className="question-accordion-arrow">
-                                    <i className='bx bxs-down-arrow'></i>
-                                </div>
-                            </header>
-                            <div className="question-accordion-content">
-                                <p className="question-accordion-description">
-                                    Sim! Entregamos em diversos bairros da Zona Leste de São Paulo. Consulte a taxa via WhatsApp.
-                                </p>
-                            </div>
-                        </div>
-
+                        ))}
                     </div>
                 </div>
             </div>
         </section>
-
-    )
+    );
 };
+
 export default Questions;

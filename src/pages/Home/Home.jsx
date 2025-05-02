@@ -2,7 +2,7 @@ import Footer from '../../components/Footer/Footer';
 import Questions from '../../components/FAQ/Questions';
 import Header from '../../components/Header/Header';
 import Banner from '../../assets/images/mg1.png'
-import Image from '../../assets/images/mg2.png'
+import Image from '../../assets/images/mg4.png'
 import Plate from '../../assets/images/mg3.png'
 import './Home.css';
 
@@ -37,8 +37,6 @@ const Home = () => {
 
                 </div>
             </section>
-
-            {/* <Questions/> */}
             <section class="menu section bd-container" id="menu">
                 <span class="section-subtitle">Cardápio</span>
                 <h2 class="section-title">Menu da semana</h2>
@@ -75,7 +73,7 @@ const Home = () => {
                 </div>
             </section>
 
-        
+            <Questions />
             <Footer />
         </main>
     );

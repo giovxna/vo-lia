@@ -7,7 +7,6 @@ import Plate from '../../assets/images/mg3.png'
 import './Home.css';
 
 const Home = () => {
-    
     return (
         <main className="main">
             <Header />

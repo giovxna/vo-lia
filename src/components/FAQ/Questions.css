@@ -98,15 +98,3 @@
 	transform: rotate(-180deg);
 }
 
-@media screen and (max-width: 320px) {
-    .question-img {
-        width: 220px;
-        height: 260px;
-    }
-
-    .question-orbe {
-        width: 236px;
-        height: 280px;
-    }
-
-}
